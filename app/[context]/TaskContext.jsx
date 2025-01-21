@@ -16,22 +16,11 @@ const TaskProvider = ({ children }) => {
   }, []);
 
   const init = async () => {
+    
     try {
-      // const response = await db.tasks.list();
-      // setTasks(response.documents);
-      const taskList = [
-        {
-          $id: 1,
-          title: "make up your mind",
-          complete: "false"
-        },
-        {
-            $id: 2,
-            title: "swear on the bible",
-            complete: "true"
-        },
-      ];
-      setTasks(taskList);
+      const response = await db.tasks.list();
+      setTasks(response.documents);
+      
     } catch (error) {
       console.error("Error fetching tasks:", error);
     } finally {
