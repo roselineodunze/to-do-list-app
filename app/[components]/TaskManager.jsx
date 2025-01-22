@@ -12,10 +12,11 @@ const TaskManager = () => {
 
   useEffect(() => {
     setTotalTask(tasks.length);
-    const complete = tasks.filter((t, i) => {
+    const completed = tasks.filter((t, i) => {
       t.complete == false;
     });
-    console.log("completed task is: " + complete)
+    setCompletedTask(completed.length)
+    console.log("completed task is: " + completed)
   }, [tasks]);
 
   return (

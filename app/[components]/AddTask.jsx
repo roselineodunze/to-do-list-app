@@ -69,7 +69,7 @@ const AddTask = () => {
 
   return (
     <div className='mt-6 flex items-center gap-3'>
-        <input type='text' placeholder='enter a new task' value={title} onChange={(e) => setTitle(e.target.value)} className='bg-gray-900 text-white rounded-md p-2 flex-grow'/>
+        <input type='text' placeholder='add a task' value={title} onChange={(e) => setTitle(e.target.value)} className='bg-gray-900 text-white rounded-md p-2 flex-grow'/>
         <button className='bg-green-600 p-2 flex justify-center items-center rounded-md'
         onClick={handleSubmit}>
             {isEdit ? (
