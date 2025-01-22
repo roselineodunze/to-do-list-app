@@ -15,12 +15,12 @@ const TaskManager = () => {
     const completed = tasks.filter((t, i) => {
       t.complete == false;
     });
-    setCompletedTask(completed.length)
-    console.log("completed task is: " + completed)
+    setCompletedTask(completed.length);
+    console.log("completed task is: " + completed);
   }, [tasks]);
 
   return (
-    <div className="md:w-[610px] sm:w-[80vw] w-[90vw] flex flex-col h-[100vh]">
+    <div className="md:w-[610px] sm:w-[80vw] w-[90vw] flex flex-col h-full">
       <div className="flex items-center border p-5">
         <div className="w-[50%] text-white flex flex-col items-center">
           <h1 className="sm:text-6xl text-3xl">Task Done</h1>
@@ -50,6 +50,8 @@ const TaskManager = () => {
             />
           ))
         )}
+        
+
       </div>
     </div>
   );

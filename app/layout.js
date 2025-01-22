@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content="My Next.js App" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-dvh min-h-dvh bg-gray-950`}
       >
         <TaskProvider>
         {children}

@@ -4,7 +4,7 @@ import TaskManager from "./[components]/TaskManager";
 
 export default function Home() {
   return (
-    <div className="bg-gray-950 w-screen h-screen">
+    <div className=" h-dvh min-h-dvh">
       <Navbar/>
       <div className="flex justify-center items-center">
       <TaskManager/>
