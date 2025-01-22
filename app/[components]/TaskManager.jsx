@@ -20,7 +20,7 @@ const TaskManager = () => {
   }, [tasks]);
 
   return (
-    <div className="md:w-[610px] sm:w-[80vw] w-[90vw] flex flex-col h-[80vh]">
+    <div className="md:w-[610px] sm:w-[80vw] w-[90vw] flex flex-col h-[100vh]">
       <div className="flex items-center border p-5">
         <div className="w-[50%] text-white flex flex-col items-center">
           <h1 className="sm:text-6xl text-3xl">Task Done</h1>
