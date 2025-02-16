@@ -2,22 +2,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import TaskList from "./TaskList";
 import AddTask from "./AddTask";
-import { db } from "@/appwrite/database";
-import { TaskContext } from "../[context]/TaskContext";
+import useTaskStore from "../stores/taskStore";
 
 const TaskManager = () => {
-  const { tasks } = useContext(TaskContext);
-  const [totalTasks, setTotalTask] = useState(0);
-  const [completedTask, setCompletedTask] = useState(0);
+  const { tasks } = useTaskStore();
+  if (!tasks) return 
+  const completedTasks = tasks.filter(task => task.completed).length;
 
-  useEffect(() => {
-    setTotalTask(tasks.length);
-    const completed = tasks.filter((t, i) => {
-      t.complete == false;
-    });
-    setCompletedTask(completed.length);
-    console.log("completed task is: " + completed);
-  }, [tasks]);
 
   return (
     <div className="md:w-[610px] sm:w-[80vw] w-[90vw] flex flex-col h-full">
@@ -29,7 +20,7 @@ const TaskManager = () => {
         <div className="w-[50%] flex justify-center items-center">
           <div className="bg-green-600 sm:h-40 sm:w-40 w-32 h-32 rounded-full flex justify-center items-center">
             <h1 className="sm:text-7xl text-5xl text-white">
-              {completedTask}/{totalTasks}
+              {completedTasks}/{tasks.length}
             </h1>
           </div>
         </div>
@@ -44,9 +35,7 @@ const TaskManager = () => {
           tasks.map((task, i) => (
             <TaskList
               key={i}
-              id={task.$id}
-              title={task.title}
-              isComplete={task.complete}
+              task={task}
             />
           ))
         )}
