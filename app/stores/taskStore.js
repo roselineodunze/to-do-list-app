@@ -9,7 +9,7 @@ const useTaskStore = create((set) => ({
 
   addTask: (task) =>
     set((state) => ({
-      tasks: [...state.tasks, { id: Date.now(), ...task }],
+      tasks: [ { id: Date.now(), ...task }, ...state.tasks],
     })),
 
   toggleTask: (id) =>

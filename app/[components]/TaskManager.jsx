@@ -26,7 +26,7 @@ const TaskManager = () => {
         </div>
       </div>
       <AddTask />
-      <div className="h-50% h-[40vh] overflow-scroll mt-7 flex flex-col">
+      <div className="h-50% h-[40vh] overflow-scroll mt-7 mb-2 flex flex-col">
         {tasks.length === 0 ? (
           <div className="text-center text-sm">
             <h1 className="text-gray-300">No tasks added yet.</h1>
